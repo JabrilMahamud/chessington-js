@@ -1,12 +1,18 @@
+import Player from "../player";
+import Square from "../square";
 import Piece from "./piece";
+
 export default class Pawn extends Piece {
-  // <- looks like inheritance
   constructor(player) {
-    super(player); // search this up
+    super(player);
   }
-  // uses a method (cutout) to create a pawn instance
 
   getAvailableMoves(board) {
-    return new Array(0); // the range of movement the pawn can do should be put here
+    let location = board.findPiece(this);
+    if (this.player === Player.WHITE) {
+      return Square.at(location.row + 1, location.col);
+    } else {
+      return Square.at(location.row - 1, location.col);
+    }
   }
 }

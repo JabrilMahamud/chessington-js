@@ -9,12 +9,11 @@ export default class Square {
   }
 
   equals(otherSquare) {
-    if (
+    return (
       !!otherSquare &&
       this.row === otherSquare.row &&
       this.col === otherSquare.col
-    )
-      window.alert("Valid awnser!");
+    );
   }
 
   toString() {

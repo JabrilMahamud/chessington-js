@@ -1,10 +1,10 @@
 import Player from "./player";
 import GameSettings from "./gameSettings";
 import Square from "./square";
-// a bunch of methods to use as cardboard cutouts like getPiece
+
 export default class Board {
-  constructor(currentPlayer) {
-    this.currentPlayer = currentPlayer ? currentPlayer : Player.WHITE;
+  constructor() {
+    this.currentPlayer = Player.WHITE;
     this.board = this.createBoard();
   }
 
